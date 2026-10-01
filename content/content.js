@@ -46,6 +46,13 @@ export const content = {
           featured: true,
         },
         {
+          name: "Beescend / FixBee",
+          url: "https://beescend.com",
+          description:
+            "Part of the team behind FixBee, a SaaS platform for repair workshops in Latin America (work orders, point of sale, spare parts inventory and automatic WhatsApp, email and SMS notifications). I worked on the backend and on the sales side.",
+          tags: ["SaaS", "Backend", "Sales"],
+        },
+        {
           name: "This portfolio",
           url: "https://github.com/wilveradoo/wilver-portfolio",
           description:
@@ -116,6 +123,13 @@ export const content = {
             "Sitio web completo para una inmobiliaria de Puerto Madero y Nordelta. Más de 400 propiedades en vivo desde la API de Tokko Broker, filtros de búsqueda, mapa, favoritos y formularios de contacto y tasación.",
           tags: ["Next.js", "React", "REST API", "SSR"],
           featured: true,
+        },
+        {
+          name: "Beescend / FixBee",
+          url: "https://beescend.com",
+          description:
+            "Parte del equipo detrás de FixBee, una plataforma SaaS para talleres de reparación de Latinoamérica (órdenes de trabajo, punto de venta, inventario de repuestos y notificaciones automáticas por WhatsApp, email y SMS). Trabajé en el backend y en la parte de ventas.",
+          tags: ["SaaS", "Backend", "Ventas"],
         },
         {
           name: "Este portfolio",

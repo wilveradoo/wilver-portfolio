@@ -1,8 +1,47 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Light source position, from -1 to 1. Portfolio.js moves it with the mouse (or slowly on its own). */
+:root {
+  --lx: -0.5;
+  --ly: -0.7;
+
+  /* Light theme (default) */
+  --page-bg: #ebebee; /* light gray page background */
+  --shadow-soft: rgba(0, 0, 0, 0.08);
+  --shadow-wide: rgba(0, 0, 0, 0.1);
+  --text-shadow-near: rgba(0, 0, 0, 0.15);
+  --text-shadow-far: rgba(16, 185, 129, 0.3);
+  --glow: rgba(16, 185, 129, 0.1);
+}
+
+/* Dark theme: the site's colors are written for light mode, so here we flip the
+   Tailwind palette (zinc-100 <-> zinc-900, white <-> near-black, emerald-600 -> 400). */
+:root.dark {
+  --page-bg: #09090b;
+  --shadow-soft: rgba(16, 185, 129, 0.1);
+  --shadow-wide: rgba(16, 185, 129, 0.14);
+  --text-shadow-near: rgba(0, 0, 0, 0.7);
+  --text-shadow-far: rgba(16, 185, 129, 0.35);
+  --glow: rgba(16, 185, 129, 0.16);
+
+  --color-white: #09090b;
+  --color-zinc-100: #18181b;
+  --color-zinc-200: #27272a;
+  --color-zinc-300: #3f3f46;
+  --color-zinc-400: #52525b;
+  --color-zinc-500: #a1a1aa;
+  --color-zinc-600: #d4d4d8;
+  --color-zinc-900: #f4f4f5;
+  --color-emerald-500: #6ee7b7;
+  --color-emerald-600: #34d399;
+  --color-red-600: #f87171;
 }
 
 html {
@@ -11,11 +50,55 @@ html {
 }
 
 body {
-  background: #09090b;
-  color: #d4d4d8;
+  background: var(--page-bg);
+  color: #52525b;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+:root.dark body {
+  color: #d4d4d8;
+}
+
 ::selection {
-  background: #34d39966;
+  background: #10b98133;
+}
+
+.page-bg {
+  background: var(--page-bg);
+}
+
+.header-bg {
+  background: color-mix(in srgb, var(--page-bg) 80%, transparent);
+}
+
+/* Soft glow that follows the light source */
+.light-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at calc(50% + var(--lx) * 40%) calc(40% + var(--ly) * 35%),
+    var(--glow),
+    transparent 70%
+  );
+}
+
+/* Shadows fall on the opposite side of the light */
+.cast-text {
+  text-shadow:
+    calc(var(--lx) * -3px) calc(var(--ly) * -3px + 2px) 3px var(--text-shadow-near),
+    calc(var(--lx) * -14px) calc(var(--ly) * -14px + 6px) 22px var(--text-shadow-far);
+}
+
+.cast-box {
+  box-shadow:
+    calc(var(--lx) * -6px) calc(var(--ly) * -6px + 3px) 10px var(--shadow-soft),
+    calc(var(--lx) * -22px) calc(var(--ly) * -22px + 10px) 36px var(--shadow-wide);
+}
+
+main,
+footer {
+  position: relative;
+  z-index: 1;
 }
