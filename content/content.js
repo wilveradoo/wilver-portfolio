@@ -5,7 +5,7 @@ export const links = {
   email: "wilveradoo@gmail.com",
   linkedin: "https://www.linkedin.com/in/wilverguzman/",
   github: "https://github.com/wilveradoo",
-  cv: "/cv-wilver-guzman.pdf",
+  cv: { en: "/cv-wilver-guzman.pdf", es: "/cv-wilver-guzman-es.pdf" },
 };
 
 // Tech stack shown as badges (same in both languages)

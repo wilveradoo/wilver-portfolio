@@ -78,7 +78,7 @@ export default function Portfolio() {
                 {t.hero.ctaProjects}
               </a>
               <a
-                href={links.cv}
+                href={links.cv[lang]}
                 download
                 className="rounded-md border border-emerald-400 px-6 py-3 font-mono text-sm text-emerald-400 transition hover:bg-emerald-400/10"
               >
