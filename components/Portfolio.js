@@ -11,7 +11,7 @@ const PHOTO = "/wilver.jpg";
 
 function SectionTitle({ index, children }) {
   return (
-    <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-zinc-100 sm:text-3xl">
+    <h2 className="mb-10 flex items-center gap-3 text-3xl font-bold text-zinc-100 sm:text-4xl">
       <span className="font-mono text-base text-emerald-400">0{index}.</span>
       {children}
       <span className="ml-4 hidden h-px flex-1 bg-zinc-800 sm:block" />
@@ -36,7 +36,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-zinc-950 text-zinc-300">
       {/* ---------- Navbar ---------- */}
       <header className="sticky top-0 z-10 border-b border-zinc-900 bg-zinc-950/80 backdrop-blur">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           <a href="#top" className="font-mono text-sm font-semibold text-emerald-400">
             &lt;wilver /&gt;
           </a>
@@ -61,15 +61,15 @@ export default function Portfolio() {
         </nav>
       </header>
 
-      <main id="top" className="mx-auto max-w-5xl px-4 sm:px-6">
+      <main id="top" className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* ---------- Hero ---------- */}
         <section className="flex min-h-[85vh] flex-col-reverse items-start justify-center gap-10 py-16 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p className="mb-4 font-mono text-sm text-emerald-400">$ whoami</p>
             <p className="text-lg text-zinc-400">{t.hero.greeting}</p>
-            <h1 className="mt-1 text-5xl font-bold tracking-tight text-zinc-100 sm:text-6xl">Wilver Guzmán</h1>
-            <p className="mt-3 text-2xl font-semibold text-zinc-400 sm:text-3xl">{t.hero.role}</p>
-            <p className="mt-6 max-w-xl leading-relaxed">{t.hero.tagline}</p>
+            <h1 className="mt-1 text-5xl font-bold tracking-tight text-zinc-100 sm:text-7xl">Wilver Guzmán</h1>
+            <p className="mt-3 text-2xl font-semibold text-zinc-400 sm:text-4xl">{t.hero.role}</p>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed">{t.hero.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#projects"
@@ -92,9 +92,9 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full border-2 border-emerald-400/60 sm:h-56 sm:w-56">
+          <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-full border-2 border-emerald-400/60 sm:h-72 sm:w-72">
             {PHOTO ? (
-              <Image src={PHOTO} alt="Wilver Guzmán" fill sizes="224px" className="object-cover" priority />
+              <Image src={PHOTO} alt="Wilver Guzmán" fill sizes="288px" className="object-cover" priority />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-zinc-900 font-mono text-5xl font-bold text-emerald-400">
                 WG
