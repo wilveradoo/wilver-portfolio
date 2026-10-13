@@ -10,9 +10,9 @@ export const links = {
 
 // Tech stack shown as badges (same in both languages)
 export const stack = {
-  Frontend: ["JavaScript", "React", "Next.js", "HTML", "CSS", "Tailwind CSS"],
-  Backend: ["Node.js", "Python", "Flask", "SQL", "REST APIs"],
-  Tools: ["Git", "Vercel", "Tokko Broker API", "Botmaker", "WordPress", "AI-assisted dev"],
+  Frontend: ["JavaScript", "React", "Next.js", "Vite", "HTML", "CSS", "Tailwind CSS"],
+  Backend: ["Node.js", "Express", "Python", "Flask", "SQL", "SQLite", "REST APIs"],
+  Tools: ["Git", "Vercel", "Docker", "Playwright", "Tokko Broker API", "Botmaker", "WordPress", "AI-assisted dev"],
 };
 
 export const content = {
@@ -30,7 +30,7 @@ export const content = {
       title: "About me",
       body: [
         "I'm a Computer Technician (Escuela Técnica N°32) who has been taking computers apart and putting them back together since I was a kid. Today I turn that curiosity into software.",
-        "I designed and built a production real estate platform in Next.js that serves 400+ live listings through the Tokko Broker API. I like owning a feature end to end: talking with the client, writing the code and shipping it.",
+        "I designed and built a production real estate platform in Next.js that serves 400+ live listings through the Tokko Broker API, and a full stack loyalty app for a barbershop with React, Node.js/Express and SQLite. I like owning a feature end to end: talking with the client, writing the code, testing it and shipping it.",
         "I use AI tools every day to move faster, and I speak English at a C1 level, so I'm comfortable working with international teams.",
       ],
     },
@@ -46,11 +46,19 @@ export const content = {
           featured: true,
         },
         {
+          name: "Pikaros Club",
+          url: "https://pikaros-club.vercel.app",
+          description:
+            "Loyalty web app for Pikaros, a barbershop with two branches in Buenos Aires. Admin panel for desktop and customer accounts for mobile: points per visit, friend referrals, reward redemption, QR membership card, CSV export and backups. Secured API and automated tests. Next up: the shop's online booking system.",
+          tags: ["React", "Node.js", "Express", "SQLite", "Playwright"],
+          featured: true,
+        },
+        {
           name: "Beescend / FixBee",
           url: "https://beescend.com",
           description:
-            "Part of the team behind FixBee, a SaaS platform for repair workshops in Latin America (work orders, point of sale, spare parts inventory and automatic WhatsApp, email and SMS notifications). I worked on the backend and on the sales side.",
-          tags: ["SaaS", "Backend", "Sales"],
+            "Part of the team behind FixBee, a SaaS platform for repair workshops in Latin America (work orders, point of sale, spare parts inventory and automatic WhatsApp, email and SMS notifications). I built the landing page with Next.js, React and Tailwind CSS, and worked on the backend and on the sales side.",
+          tags: ["SaaS", "Next.js", "Backend", "Sales"],
         },
         {
           name: "This portfolio",
@@ -109,7 +117,7 @@ export const content = {
       title: "Sobre mí",
       body: [
         "Soy Técnico en Computación (Escuela Técnica N°32) y desarmo y armo computadoras desde chico. Hoy transformo esa curiosidad en software.",
-        "Diseñé y desarrollé una plataforma inmobiliaria en producción con Next.js que muestra más de 400 propiedades en vivo a través de la API de Tokko Broker. Me gusta encargarme de una funcionalidad de punta a punta: hablar con el cliente, escribir el código y publicarlo.",
+        "Diseñé y desarrollé una plataforma inmobiliaria en producción con Next.js que muestra más de 400 propiedades en vivo a través de la API de Tokko Broker, y una app full stack de fidelización para una barbería con React, Node.js/Express y SQLite. Me gusta encargarme de una funcionalidad de punta a punta: hablar con el cliente, escribir el código, testearlo y publicarlo.",
         "Uso herramientas de IA todos los días para trabajar más rápido y hablo inglés nivel C1, así que me siento cómodo trabajando con equipos internacionales.",
       ],
     },
@@ -125,11 +133,19 @@ export const content = {
           featured: true,
         },
         {
+          name: "Pikaros Club",
+          url: "https://pikaros-club.vercel.app",
+          description:
+            "App web de fidelización para Pikaros, una barbería con dos sucursales en CABA. Panel de administración para PC y cuentas de clientes para celular: puntos por visita, referidos, canje de premios, credencial QR, exportación CSV y backups. API protegida y tests automatizados. Lo próximo: el sistema de turnos online de la barbería.",
+          tags: ["React", "Node.js", "Express", "SQLite", "Playwright"],
+          featured: true,
+        },
+        {
           name: "Beescend / FixBee",
           url: "https://beescend.com",
           description:
-            "Parte del equipo detrás de FixBee, una plataforma SaaS para talleres de reparación de Latinoamérica (órdenes de trabajo, punto de venta, inventario de repuestos y notificaciones automáticas por WhatsApp, email y SMS). Trabajé en el backend y en la parte de ventas.",
-          tags: ["SaaS", "Backend", "Ventas"],
+            "Parte del equipo detrás de FixBee, una plataforma SaaS para talleres de reparación de Latinoamérica (órdenes de trabajo, punto de venta, inventario de repuestos y notificaciones automáticas por WhatsApp, email y SMS). Desarrollé la landing con Next.js, React y Tailwind CSS, y trabajé en el backend y en la parte de ventas.",
+          tags: ["SaaS", "Next.js", "Backend", "Ventas"],
         },
         {
           name: "Este portfolio",
