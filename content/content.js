@@ -10,7 +10,7 @@ export const links = {
 
 // Tech stack shown as badges (same in both languages)
 export const stack = {
-  Frontend: ["JavaScript", "React", "Next.js", "Vite", "HTML", "CSS", "Tailwind CSS"],
+  Frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Vite", "HTML", "CSS", "Tailwind CSS"],
   Backend: ["Node.js", "Express", "Python", "Flask", "SQL", "SQLite", "REST APIs"],
   Tools: ["Git", "Vercel", "Docker", "Playwright", "Tokko Broker API", "Botmaker", "WordPress", "AI-assisted dev"],
 };
