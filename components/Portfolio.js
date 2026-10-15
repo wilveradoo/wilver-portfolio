@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { content, links, stack } from "@/content/content";
 import ContactForm from "@/components/ContactForm";
 
@@ -92,6 +93,11 @@ export default function Portfolio() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link href="/netsuite" className="transition hover:text-emerald-600">
+                  NetSuite
+                </Link>
+              </li>
             </ul>
             <button
               onClick={toggleTheme}
@@ -194,6 +200,13 @@ export default function Portfolio() {
                 )}
               </article>
             ))}
+            <article className="cast-box flex flex-col rounded-lg border border-emerald-600/40 bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-600/60 md:col-span-2">
+              <h3 className="text-xl font-semibold text-zinc-900">{t.netsuite.teaserTitle}</h3>
+              <p className="mt-3 flex-1 leading-relaxed">{t.netsuite.teaserBody}</p>
+              <Link href="/netsuite" className="mt-5 font-mono text-sm text-emerald-600 hover:underline">
+                {t.netsuite.teaserCta} →
+              </Link>
+            </article>
           </div>
         </section>
 

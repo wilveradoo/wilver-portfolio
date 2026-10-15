@@ -6,6 +6,7 @@ export const links = {
   linkedin: "https://www.linkedin.com/in/wilverguzman/",
   github: "https://github.com/wilveradoo",
   cv: { en: "/cv-wilver-guzman.pdf", es: "/cv-wilver-guzman-es.pdf" },
+  cvNetsuite: { en: "/cv-wilver-guzman-netsuite.pdf", es: "/cv-wilver-guzman-netsuite-es.pdf" },
 };
 
 // Tech stack shown as badges (same in both languages)
@@ -82,6 +83,67 @@ export const content = {
       ],
       visit: "Visit site",
       code: "View code",
+    },
+    netsuite: {
+      teaserTitle: "NetSuite development",
+      teaserBody:
+        "Since February 2024 I have also worked hands-on with Oracle NetSuite on client projects: SuiteScript 2.1, RESTlets, SuiteQL, SuiteFlow and SDF. See what I built.",
+      teaserCta: "NetSuite page",
+      back: "← Back to portfolio",
+      role: "Junior NetSuite Developer",
+      tagline:
+        "SuiteScript 2.1 developer who also ships full stack web apps with React and Node.js. Based in Buenos Aires, working remotely.",
+      ctaCv: "Download NetSuite CV",
+      ctaContact: "Get in touch",
+      experienceTitle: "Experience",
+      experienceIntro:
+        "Since February 2024 I have collaborated informally on NetSuite client projects across hotels, accounting firms and other industries, working alongside an experienced NetSuite developer. The work below is what I built myself.",
+      projects: [
+        {
+          name: "Credit limit validation",
+          description:
+            "User Event script that blocks sales orders from customers over their credit limit, with a role-based bypass configured through Script Parameters and auditing with N/log.",
+          tags: ["SuiteScript 2.1", "User Event", "N/log"],
+        },
+        {
+          name: "Overdue invoice reminders",
+          description:
+            "Map/Reduce script that sends one consolidated email per customer with their overdue invoices. Safe to re-run without duplicate emails, with error reporting in the summarize stage.",
+          tags: ["SuiteScript 2.1", "Map/Reduce"],
+        },
+        {
+          name: "E-commerce integration",
+          description:
+            "RESTlet with Token-Based Authentication that lets an online store create Sales Orders and query stock in real time, using SuiteQL.",
+          tags: ["RESTlet", "SuiteQL", "Token-Based Auth"],
+        },
+        {
+          name: "Purchase Order approvals",
+          description:
+            "Multi-level approval workflow in SuiteFlow with automatic escalation and dynamic approvers.",
+          tags: ["SuiteFlow", "Workflows"],
+        },
+        {
+          name: "SuiteScript 1.0 to 2.1 migration",
+          description:
+            "Migrated legacy scripts to SuiteScript 2.1 and set up an SDF project versioned in Git, with a Sandbox, code review and production release flow.",
+          tags: ["SDF", "Git", "SuiteScript 2.1"],
+        },
+      ],
+      stackTitle: "NetSuite stack",
+      stack: [
+        "SuiteScript 2.1",
+        "User Event",
+        "Map/Reduce",
+        "RESTlets",
+        "SuiteQL",
+        "SuiteFlow",
+        "SDF",
+        "Token-Based Authentication",
+        "Git",
+        "JavaScript",
+      ],
+      note: "I do not hold NetSuite certifications yet. SuiteFoundation is the next step.",
     },
     stack: { title: "Tech stack" },
     hardware: {
@@ -169,6 +231,67 @@ export const content = {
       ],
       visit: "Ver sitio",
       code: "Ver código",
+    },
+    netsuite: {
+      teaserTitle: "Desarrollo en NetSuite",
+      teaserBody:
+        "Desde febrero de 2024 también trabajo con Oracle NetSuite en proyectos de clientes: SuiteScript 2.1, RESTlets, SuiteQL, SuiteFlow y SDF. Mirá lo que construí.",
+      teaserCta: "Página de NetSuite",
+      back: "← Volver al portfolio",
+      role: "NetSuite Developer Junior",
+      tagline:
+        "Desarrollador SuiteScript 2.1 que también publica aplicaciones web full stack con React y Node.js. Desde Buenos Aires, trabajando en remoto.",
+      ctaCv: "Descargar CV de NetSuite",
+      ctaContact: "Contactame",
+      experienceTitle: "Experiencia",
+      experienceIntro:
+        "Desde febrero de 2024 colaboro de manera informal en proyectos de NetSuite para clientes de hotelería, estudios contables y otros rubros, junto a un desarrollador NetSuite con experiencia. Lo que sigue es lo que construí yo.",
+      projects: [
+        {
+          name: "Validación de límite de crédito",
+          description:
+            "Script User Event que bloquea órdenes de venta de clientes que superan su límite de crédito, con excepción por rol configurada mediante Script Parameters y auditoría con N/log.",
+          tags: ["SuiteScript 2.1", "User Event", "N/log"],
+        },
+        {
+          name: "Recordatorios de facturas vencidas",
+          description:
+            "Script Map/Reduce que envía un solo email consolidado por cliente con sus facturas vencidas. Se puede volver a ejecutar sin duplicar envíos, con reporte de errores en la etapa summarize.",
+          tags: ["SuiteScript 2.1", "Map/Reduce"],
+        },
+        {
+          name: "Integración con e-commerce",
+          description:
+            "RESTlet con Token-Based Authentication que permite a una tienda online crear Sales Orders y consultar stock en tiempo real, usando SuiteQL.",
+          tags: ["RESTlet", "SuiteQL", "Token-Based Auth"],
+        },
+        {
+          name: "Aprobación de órdenes de compra",
+          description:
+            "Workflow de aprobación multinivel en SuiteFlow con escalamiento automático y aprobadores dinámicos.",
+          tags: ["SuiteFlow", "Workflows"],
+        },
+        {
+          name: "Migración de SuiteScript 1.0 a 2.1",
+          description:
+            "Migré scripts heredados a SuiteScript 2.1 y armé un proyecto SDF versionado en Git, con flujo de Sandbox, revisión de código y paso a producción.",
+          tags: ["SDF", "Git", "SuiteScript 2.1"],
+        },
+      ],
+      stackTitle: "Stack NetSuite",
+      stack: [
+        "SuiteScript 2.1",
+        "User Event",
+        "Map/Reduce",
+        "RESTlets",
+        "SuiteQL",
+        "SuiteFlow",
+        "SDF",
+        "Token-Based Authentication",
+        "Git",
+        "JavaScript",
+      ],
+      note: "Todavía no tengo certificaciones de NetSuite. SuiteFoundation es el próximo paso.",
     },
     stack: { title: "Tecnologías" },
     hardware: {
