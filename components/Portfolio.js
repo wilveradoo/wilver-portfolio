@@ -238,9 +238,43 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* ---------- Featured features ---------- */}
+        <section id="features" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
+          <SectionTitle index={3}>{t.features.title}</SectionTitle>
+          <p className="-mt-4 mb-10 max-w-2xl leading-relaxed">{t.features.intro}</p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {t.features.items.map((item) => (
+              <article
+                key={item.title}
+                className="cast-box flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white transition hover:-translate-y-1 hover:border-emerald-600/60"
+              >
+                <div className="relative aspect-[16/9] border-b border-zinc-200 bg-zinc-100">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} - ${item.project}`}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="font-mono text-xs text-emerald-600">{item.project}</p>
+                  <h3 className="mt-1 text-lg font-semibold text-zinc-900">{item.title}</h3>
+                  <p className="mt-3 flex-1 leading-relaxed">{item.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <Tag key={tag}>{tag}</Tag>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* ---------- Stack ---------- */}
         <section id="stack" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
-          <SectionTitle index={3}>{t.stack.title}</SectionTitle>
+          <SectionTitle index={4}>{t.stack.title}</SectionTitle>
           <div className="grid gap-6 sm:grid-cols-3">
             {Object.entries(stack).map(([group, items]) => (
               <div key={group} className="cast-box rounded-lg border border-zinc-200 p-6">
@@ -257,7 +291,7 @@ export default function Portfolio() {
 
         {/* ---------- Hardware ---------- */}
         <section id="hardware" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
-          <SectionTitle index={4}>{t.hardware.title}</SectionTitle>
+          <SectionTitle index={5}>{t.hardware.title}</SectionTitle>
           <div className="grid items-start gap-8 md:grid-cols-2">
             <p className="leading-relaxed">{t.hardware.body}</p>
             <ul className="space-y-3 font-mono text-sm">
@@ -273,7 +307,7 @@ export default function Portfolio() {
 
         {/* ---------- Contact ---------- */}
         <section id="contact" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
-          <SectionTitle index={5}>{t.contact.title}</SectionTitle>
+          <SectionTitle index={6}>{t.contact.title}</SectionTitle>
           <p className="mb-8 max-w-2xl leading-relaxed">{t.contact.body}</p>
           <div className="max-w-2xl">
             <ContactForm t={t.contact} />

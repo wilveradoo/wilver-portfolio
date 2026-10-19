@@ -18,7 +18,7 @@ export const stack = {
 
 export const content = {
   en: {
-    nav: { about: "About", projects: "Projects", stack: "Stack", hardware: "Hardware", contact: "Contact" },
+    nav: { about: "About", projects: "Projects", features: "Features", stack: "Stack", hardware: "Hardware", contact: "Contact" },
     hero: {
       greeting: "Hi, I'm",
       role: "Full Stack Developer",
@@ -41,6 +41,7 @@ export const content = {
         {
           name: "Madero Realty",
           url: "https://maderorealty.com",
+          image: "/projects/madero.jpg",
           description:
             "Full real estate website for an agency in Puerto Madero and Nordelta. 400+ live listings from the Tokko Broker API, search filters, map view, saved properties and contact/valuation forms.",
           tags: ["Next.js", "React", "REST API", "SSR"],
@@ -51,7 +52,7 @@ export const content = {
           url: "https://pikaros-club.vercel.app",
           image: "/projects/pikaros.jpg",
           description:
-            "Loyalty web app for Pikaros, a barbershop with two branches in Buenos Aires. Admin panel for desktop and customer accounts for mobile: points per visit, friend referrals, reward redemption, QR membership card, CSV export and backups. Secured API and automated tests. Next up: the shop's online booking system.",
+            "Loyalty web app for Pikaros, a barbershop with two branches in Buenos Aires. Admin panel for desktop and customer accounts for mobile: points per visit, friend referrals, reward redemption, QR membership card, CSV export and backups. Secured API and automated tests. Also includes the shop's online booking system.",
           tags: ["React", "Node.js", "Express", "SQLite", "Playwright"],
           featured: true,
         },
@@ -147,6 +148,36 @@ export const content = {
       ],
       note: "I do not hold NetSuite certifications yet. SuiteFoundation is the next step.",
     },
+    features: {
+      title: "Featured features",
+      intro: "Some of the features I built that I'm proudest of, from real projects.",
+      items: [
+        {
+          title: "Interactive property map",
+          project: "Madero Realty",
+          image: "/projects/feat-map.jpg",
+          description:
+            "All the live listings plotted on an interactive map with clustered markers, so visitors can explore by area instead of scrolling a list.",
+          tags: ["Next.js", "Maps", "Tokko API"],
+        },
+        {
+          title: "Search and filters on 400+ listings",
+          project: "Madero Realty",
+          image: "/projects/feat-filters.jpg",
+          description:
+            "Filter by operation (sale, rent, temporary), location, type and rooms, with saved properties. Listings sync from the Tokko Broker API.",
+          tags: ["Next.js", "REST API", "SSR"],
+        },
+        {
+          title: "Online booking flow",
+          project: "Pikaros",
+          image: "/projects/feat-booking.jpg",
+          description:
+            "Step-by-step appointment booking for a barbershop with two branches, designed to be fast on a phone and clear at every step.",
+          tags: ["React", "Node.js", "Express"],
+        },
+      ],
+    },
     stack: { title: "Tech stack" },
     hardware: {
       title: "Hardware & Arduino",
@@ -168,7 +199,7 @@ export const content = {
   },
 
   es: {
-    nav: { about: "Sobre mí", projects: "Proyectos", stack: "Stack", hardware: "Hardware", contact: "Contacto" },
+    nav: { about: "Sobre mí", projects: "Proyectos", features: "Funciones", stack: "Stack", hardware: "Hardware", contact: "Contacto" },
     hero: {
       greeting: "Hola, soy",
       role: "Desarrollador Full Stack",
@@ -201,7 +232,7 @@ export const content = {
           url: "https://pikaros-club.vercel.app",
           image: "/projects/pikaros.jpg",
           description:
-            "App web de fidelización para Pikaros, una barbería con dos sucursales en CABA. Panel de administración para PC y cuentas de clientes para celular: puntos por visita, referidos, canje de premios, credencial QR, exportación CSV y backups. API protegida y tests automatizados. Lo próximo: el sistema de turnos online de la barbería.",
+            "App web de fidelización para Pikaros, una barbería con dos sucursales en CABA. Panel de administración para PC y cuentas de clientes para celular: puntos por visita, referidos, canje de premios, credencial QR, exportación CSV y backups. API protegida y tests automatizados. Incluye también el sistema de turnos online de la barbería.",
           tags: ["React", "Node.js", "Express", "SQLite", "Playwright"],
           featured: true,
         },
@@ -296,6 +327,36 @@ export const content = {
         "JavaScript",
       ],
       note: "Todavía no tengo certificaciones de NetSuite. SuiteFoundation es el próximo paso.",
+    },
+    features: {
+      title: "Funciones destacadas",
+      intro: "Algunas de las funciones que más me enorgullecen, de proyectos reales.",
+      items: [
+        {
+          title: "Mapa interactivo de propiedades",
+          project: "Madero Realty",
+          image: "/projects/feat-map.jpg",
+          description:
+            "Todas las propiedades publicadas sobre un mapa interactivo con marcadores agrupados, para explorar por zona en lugar de recorrer una lista.",
+          tags: ["Next.js", "Mapas", "Tokko API"],
+        },
+        {
+          title: "Búsqueda y filtros sobre 400+ propiedades",
+          project: "Madero Realty",
+          image: "/projects/feat-filters.jpg",
+          description:
+            "Filtros por operación (venta, alquiler, temporario), ubicación, tipo y ambientes, con propiedades guardadas. El listado se sincroniza con la API de Tokko Broker.",
+          tags: ["Next.js", "REST API", "SSR"],
+        },
+        {
+          title: "Reserva de turnos online",
+          project: "Pikaros",
+          image: "/projects/feat-booking.jpg",
+          description:
+            "Reserva de turnos paso a paso para una barbería con dos sucursales, pensada para ser rápida desde el celular y clara en cada paso.",
+          tags: ["React", "Node.js", "Express"],
+        },
+      ],
     },
     stack: { title: "Tecnologías" },
     hardware: {
