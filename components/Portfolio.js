@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, MotionConfig, useScroll, useSpring } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { content, links, stack } from "@/content/content";
 import ContactForm from "@/components/ContactForm";
+import { fadeUp, rise } from "@/components/Reveal";
 
 // Put your photo in /public/wilver.jpg and change this to "/wilver.jpg".
 // While it's null, the site shows your initials instead.
@@ -12,11 +14,11 @@ const PHOTO = "/wilver.jpg";
 
 function SectionTitle({ index, children }) {
   return (
-    <h2 className="mb-10 flex items-center gap-3 text-3xl font-bold text-zinc-900 sm:text-4xl">
+    <motion.h2 {...fadeUp()} className="mb-10 flex items-center gap-3 text-3xl font-bold text-zinc-900 sm:text-4xl">
       <span className="font-mono text-base text-emerald-600">0{index}.</span>
       {children}
       <span className="ml-4 hidden h-px flex-1 bg-zinc-200 sm:block" />
-    </h2>
+    </motion.h2>
   );
 }
 
@@ -40,6 +42,10 @@ export default function Portfolio() {
   // Current language: "en" or "es". Every text below reads from content[lang].
   const [lang, setLang] = useState("en");
   const t = content[lang];
+
+  // Thin progress bar at the top of the page that fills as you scroll.
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   // Moves the light source: follows the mouse, and drifts slowly on its own when idle (e.g. on phones).
   useEffect(() => {
@@ -76,10 +82,21 @@ export default function Portfolio() {
   }, []);
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="page-bg min-h-screen text-zinc-600">
+      <motion.div
+        className="fixed inset-x-0 top-0 z-20 h-0.5 origin-left bg-emerald-500"
+        style={{ scaleX: progress }}
+        aria-hidden="true"
+      />
       <div className="light-glow" aria-hidden="true" />
       {/* ---------- Navbar ---------- */}
-      <header className="sticky top-0 z-10 border-b border-zinc-200 header-bg backdrop-blur">
+      <motion.header
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="sticky top-0 z-10 border-b border-zinc-200 header-bg backdrop-blur"
+      >
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           <a href="#top" className="font-mono text-sm font-semibold text-emerald-600">
             &lt;wilver /&gt;
@@ -116,18 +133,18 @@ export default function Portfolio() {
             </button>
           </div>
         </nav>
-      </header>
+      </motion.header>
 
       <main id="top" className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* ---------- Hero ---------- */}
         <section className="flex min-h-[85vh] flex-col-reverse items-start justify-center gap-10 py-16 md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
-            <p className="mb-4 font-mono text-sm text-emerald-600">$ whoami</p>
-            <p className="text-lg text-zinc-500">{t.hero.greeting}</p>
-            <h1 className="cast-text mt-1 text-5xl font-bold tracking-tight text-zinc-900 sm:text-7xl">Wilver Guzmán</h1>
-            <p className="mt-3 text-2xl font-semibold text-zinc-500 sm:text-4xl">{t.hero.role}</p>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed">{t.hero.tagline}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <motion.p {...rise(0.1)} className="mb-4 font-mono text-sm text-emerald-600">$ whoami</motion.p>
+            <motion.p {...rise(0.2)} className="text-lg text-zinc-500">{t.hero.greeting}</motion.p>
+            <motion.h1 {...rise(0.3)} className="cast-text mt-1 text-5xl font-bold tracking-tight text-zinc-900 sm:text-7xl">Wilver Guzmán</motion.h1>
+            <motion.p {...rise(0.45)} className="mt-3 text-2xl font-semibold text-zinc-500 sm:text-4xl">{t.hero.role}</motion.p>
+            <motion.p {...rise(0.55)} className="mt-6 max-w-xl text-lg leading-relaxed">{t.hero.tagline}</motion.p>
+            <motion.div {...rise(0.7)} className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#projects"
                 className="rounded-md bg-emerald-600 px-6 py-3 font-mono text-sm font-semibold text-white transition hover:bg-emerald-500"
@@ -141,15 +158,21 @@ export default function Portfolio() {
               >
                 {t.hero.ctaCv}
               </a>
-            </div>
-            <div className="mt-8 flex gap-5 font-mono text-sm">
+            </motion.div>
+            <motion.div {...rise(0.85)} className="mt-8 flex gap-5 font-mono text-sm">
               <a href={links.github} target="_blank" rel="noreferrer" className="hover:text-emerald-600">GitHub</a>
               <a href={links.linkedin} target="_blank" rel="noreferrer" className="hover:text-emerald-600">LinkedIn</a>
               <a href={`mailto:${links.email}`} className="hover:text-emerald-600">Email</a>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="cast-box relative h-48 w-48 shrink-0 overflow-hidden rounded-full border-2 border-emerald-600/60 sm:h-72 sm:w-72">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.03 }}
+            className="cast-box relative h-48 w-48 shrink-0 overflow-hidden rounded-full border-2 border-emerald-600/60 sm:h-72 sm:w-72"
+          >
             {PHOTO ? (
               <Image src={PHOTO} alt="Wilver Guzmán" fill sizes="288px" className="object-cover" priority />
             ) : (
@@ -157,15 +180,17 @@ export default function Portfolio() {
                 WG
               </div>
             )}
-          </div>
+          </motion.div>
         </section>
 
         {/* ---------- About ---------- */}
         <section id="about" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
           <SectionTitle index={1}>{t.about.title}</SectionTitle>
           <div className="max-w-3xl space-y-4 leading-relaxed">
-            {t.about.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {t.about.body.map((paragraph, i) => (
+              <motion.p key={paragraph} {...fadeUp(i)}>
+                {paragraph}
+              </motion.p>
             ))}
           </div>
         </section>
@@ -174,8 +199,9 @@ export default function Portfolio() {
         <section id="projects" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
           <SectionTitle index={2}>{t.projects.title}</SectionTitle>
           <div className="grid gap-6 md:grid-cols-2">
-            {t.projects.items.map((project) => (
-              <article
+            {t.projects.items.map((project, i) => (
+              <motion.article
+                {...fadeUp(i)}
                 key={project.name}
                 className={`cast-box flex flex-col rounded-lg border bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-600/60 ${
                   project.featured ? "border-emerald-600/40 md:col-span-2" : "border-zinc-200"
@@ -226,15 +252,18 @@ export default function Portfolio() {
                   </a>
                 )}
               </div>
-              </article>
+              </motion.article>
             ))}
-            <article className="cast-box flex flex-col rounded-lg border border-emerald-600/40 bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-600/60 md:col-span-2">
+            <motion.article
+              {...fadeUp(0)}
+              className="cast-box flex flex-col rounded-lg border border-emerald-600/40 bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-600/60 md:col-span-2"
+            >
               <h3 className="text-xl font-semibold text-zinc-900">{t.netsuite.teaserTitle}</h3>
               <p className="mt-3 flex-1 leading-relaxed">{t.netsuite.teaserBody}</p>
               <Link href="/netsuite" className="mt-5 font-mono text-sm text-emerald-600 hover:underline">
                 {t.netsuite.teaserCta} →
               </Link>
-            </article>
+            </motion.article>
           </div>
         </section>
 
@@ -243,8 +272,9 @@ export default function Portfolio() {
           <SectionTitle index={3}>{t.features.title}</SectionTitle>
           <p className="-mt-4 mb-10 max-w-2xl leading-relaxed">{t.features.intro}</p>
           <div className="grid gap-6 md:grid-cols-3">
-            {t.features.items.map((item) => (
-              <article
+            {t.features.items.map((item, i) => (
+              <motion.article
+                {...fadeUp(i)}
                 key={item.title}
                 className="cast-box flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white transition hover:-translate-y-1 hover:border-emerald-600/60"
               >
@@ -267,7 +297,7 @@ export default function Portfolio() {
                     ))}
                   </div>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         </section>
@@ -276,15 +306,15 @@ export default function Portfolio() {
         <section id="stack" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
           <SectionTitle index={4}>{t.stack.title}</SectionTitle>
           <div className="grid gap-6 sm:grid-cols-3">
-            {Object.entries(stack).map(([group, items]) => (
-              <div key={group} className="cast-box rounded-lg border border-zinc-200 p-6">
+            {Object.entries(stack).map(([group, items], i) => (
+              <motion.div {...fadeUp(i)} key={group} className="cast-box rounded-lg border border-zinc-200 p-6">
                 <h3 className="mb-4 font-mono text-sm text-emerald-600">{group}</h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((item) => (
                     <Tag key={item}>{item}</Tag>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -295,11 +325,11 @@ export default function Portfolio() {
           <div className="grid items-start gap-8 md:grid-cols-2">
             <p className="leading-relaxed">{t.hardware.body}</p>
             <ul className="space-y-3 font-mono text-sm">
-              {t.hardware.items.map((item) => (
-                <li key={item} className="flex items-center gap-3">
+              {t.hardware.items.map((item, i) => (
+                <motion.li {...fadeUp(i)} key={item} className="flex items-center gap-3">
                   <span className="text-emerald-600">▹</span>
                   {item}
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -319,5 +349,6 @@ export default function Portfolio() {
         © {new Date().getFullYear()} Wilver Guzmán · {t.footer}
       </footer>
     </div>
+    </MotionConfig>
   );
 }
