@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { content, links, stack } from "@/content/content";
 import ContactForm from "@/components/ContactForm";
+import EmailLink from "@/components/EmailLink";
 import { fadeUp, rise } from "@/components/Reveal";
 
 // Put your photo in /public/wilver.jpg and change this to "/wilver.jpg".
@@ -162,7 +163,13 @@ export default function Portfolio() {
             <motion.div {...rise(0.85)} className="mt-8 flex gap-5 font-mono text-sm">
               <a href={links.github} target="_blank" rel="noreferrer" className="hover:text-emerald-600">GitHub</a>
               <a href={links.linkedin} target="_blank" rel="noreferrer" className="hover:text-emerald-600">LinkedIn</a>
-              <a href={`mailto:${links.email}`} className="hover:text-emerald-600">Email</a>
+              <EmailLink
+                email={links.email}
+                className="hover:text-emerald-600"
+                copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}
+              >
+                Email
+              </EmailLink>
             </motion.div>
           </div>
 

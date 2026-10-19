@@ -1,5 +1,6 @@
 "use client";
 
+import EmailLink from "@/components/EmailLink";
 import { useState } from "react";
 import Link from "next/link";
 import { content, links } from "@/content/content";
@@ -69,17 +70,20 @@ export default function NetSuitePage() {
             >
               {t.ctaCv}
             </a>
-            <a
-              href={`mailto:${links.email}`}
+            <EmailLink
+              email={links.email}
               className="rounded-md border border-emerald-600 px-6 py-3 font-mono text-sm text-emerald-600 transition hover:bg-emerald-600/10"
+              copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}
             >
               {t.ctaContact}
-            </a>
+            </EmailLink>
           </div>
           <div className="mt-8 flex gap-5 font-mono text-sm">
             <a href={links.linkedin} target="_blank" rel="noreferrer" className="hover:text-emerald-600">LinkedIn</a>
             <a href={links.github} target="_blank" rel="noreferrer" className="hover:text-emerald-600">GitHub</a>
-            <a href={`mailto:${links.email}`} className="hover:text-emerald-600">Email</a>
+            <EmailLink email={links.email} className="hover:text-emerald-600" copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}>
+              Email
+            </EmailLink>
           </div>
         </section>
 
@@ -117,12 +121,9 @@ export default function NetSuitePage() {
         <section className="border-t-2 border-zinc-400 py-16">
           <h2 className="mb-4 text-3xl font-bold text-zinc-900">{contact.title}</h2>
           <p className="mb-6 max-w-2xl leading-relaxed">{contact.body}</p>
-          <a
-            href={`mailto:${links.email}`}
-            className="font-mono text-emerald-600 hover:underline"
-          >
+          <EmailLink email={links.email} className="font-mono text-emerald-600 hover:underline" copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}>
             {links.email}
-          </a>
+          </EmailLink>
         </section>
       </main>
 
