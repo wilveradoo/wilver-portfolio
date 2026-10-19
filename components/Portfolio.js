@@ -179,8 +179,35 @@ export default function Portfolio() {
                 key={project.name}
                 className={`cast-box flex flex-col rounded-lg border bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-600/60 ${
                   project.featured ? "border-emerald-600/40 md:col-span-2" : "border-zinc-200"
-                }`}
+                } ${project.featured && project.image ? "md:grid md:grid-cols-5 md:items-center md:gap-8" : ""}`}
               >
+                {project.image && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`group relative mb-5 block aspect-[16/9] overflow-hidden rounded-md border border-zinc-200 bg-zinc-100 ${
+                      project.featured ? "md:col-span-3 md:mb-0" : ""
+                    }`}
+                  >
+                    <div className="absolute inset-x-0 top-0 z-10 flex items-center gap-1.5 border-b border-zinc-200 bg-zinc-100/90 px-3 py-2 backdrop-blur">
+                      <span className="h-2.5 w-2.5 rounded-full bg-zinc-300" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-zinc-300" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-zinc-300" />
+                      <span className="ml-3 truncate font-mono text-xs text-zinc-500">
+                        {project.url.replace("https://", "")}
+                      </span>
+                    </div>
+                    <Image
+                      src={project.image}
+                      alt={`${project.name} screenshot`}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover object-top pt-8 transition duration-500 group-hover:scale-[1.03]"
+                    />
+                  </a>
+                )}
+<div className={`flex flex-1 flex-col ${project.featured && project.image ? "md:col-span-2" : ""}`}>
                 <h3 className="text-xl font-semibold text-zinc-900">{project.name}</h3>
                 <p className="mt-3 flex-1 leading-relaxed">{project.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -198,6 +225,7 @@ export default function Portfolio() {
                     {project.url.includes("github.com") ? t.projects.code : t.projects.visit} →
                   </a>
                 )}
+              </div>
               </article>
             ))}
             <article className="cast-box flex flex-col rounded-lg border border-emerald-600/40 bg-white p-6 transition hover:-translate-y-1 hover:border-emerald-600/60 md:col-span-2">

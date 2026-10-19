@@ -49,6 +49,7 @@ export const content = {
         {
           name: "Pikaros Club",
           url: "https://pikaros-club.vercel.app",
+          image: "/projects/pikaros.jpg",
           description:
             "Loyalty web app for Pikaros, a barbershop with two branches in Buenos Aires. Admin panel for desktop and customer accounts for mobile: points per visit, friend referrals, reward redemption, QR membership card, CSV export and backups. Secured API and automated tests. Next up: the shop's online booking system.",
           tags: ["React", "Node.js", "Express", "SQLite", "Playwright"],
@@ -57,6 +58,7 @@ export const content = {
         {
           name: "Beescend / FixBee",
           url: "https://beescend.com",
+          image: "/projects/beescend.jpg",
           description:
             "Part of the team behind FixBee, a SaaS platform for repair workshops in Latin America (work orders, point of sale, spare parts inventory and automatic WhatsApp, email and SMS notifications). I built the landing page with Next.js, React and Tailwind CSS, and worked on the backend and on the sales side.",
           tags: ["SaaS", "Next.js", "Backend", "Sales"],
@@ -197,6 +199,7 @@ export const content = {
         {
           name: "Pikaros Club",
           url: "https://pikaros-club.vercel.app",
+          image: "/projects/pikaros.jpg",
           description:
             "App web de fidelización para Pikaros, una barbería con dos sucursales en CABA. Panel de administración para PC y cuentas de clientes para celular: puntos por visita, referidos, canje de premios, credencial QR, exportación CSV y backups. API protegida y tests automatizados. Lo próximo: el sistema de turnos online de la barbería.",
           tags: ["React", "Node.js", "Express", "SQLite", "Playwright"],
@@ -205,6 +208,7 @@ export const content = {
         {
           name: "Beescend / FixBee",
           url: "https://beescend.com",
+          image: "/projects/beescend.jpg",
           description:
             "Parte del equipo detrás de FixBee, una plataforma SaaS para talleres de reparación de Latinoamérica (órdenes de trabajo, punto de venta, inventario de repuestos y notificaciones automáticas por WhatsApp, email y SMS). Desarrollé la landing con Next.js, React y Tailwind CSS, y trabajé en el backend y en la parte de ventas.",
           tags: ["SaaS", "Next.js", "Backend", "Ventas"],
