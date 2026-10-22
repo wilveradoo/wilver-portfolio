@@ -49,7 +49,7 @@ export const content = {
         },
         {
           name: "Pikaros Club",
-          url: "https://pikaros-club.vercel.app",
+          url: "https://pikaros.com.ar",
           image: "/projects/pikaros.jpg",
           description:
             "Loyalty web app for Pikaros, a barbershop with two branches in Buenos Aires. Admin panel for desktop and customer accounts for mobile: points per visit, friend referrals, reward redemption, QR membership card, CSV export and backups. Secured API and automated tests. Also includes the shop's online booking system.",
@@ -229,7 +229,7 @@ export const content = {
         },
         {
           name: "Pikaros Club",
-          url: "https://pikaros-club.vercel.app",
+          url: "https://pikaros.com.ar",
           image: "/projects/pikaros.jpg",
           description:
             "App web de fidelización para Pikaros, una barbería con dos sucursales en CABA. Panel de administración para PC y cuentas de clientes para celular: puntos por visita, referidos, canje de premios, credencial QR, exportación CSV y backups. API protegida y tests automatizados. Incluye también el sistema de turnos online de la barbería.",
