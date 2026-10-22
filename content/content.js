@@ -90,17 +90,17 @@ export const content = {
     netsuite: {
       teaserTitle: "NetSuite development",
       teaserBody:
-        "Since February 2024 I have also worked hands-on with Oracle NetSuite on client projects: SuiteScript 2.1, RESTlets, SuiteQL, SuiteFlow and SDF. See what I built.",
+        "Since 2023 I have also worked hands-on with Oracle NetSuite on client projects: SuiteScript 2.1, RESTlets, SuiteQL, SuiteFlow and SDF, plus the functional side: requirements, QA and UAT, and user support. See what I built.",
       teaserCta: "NetSuite page",
       back: "← Back to portfolio",
-      role: "Junior NetSuite Developer",
+      role: "NetSuite Developer and Functional Consultant",
       tagline:
-        "SuiteScript 2.1 developer who also ships full stack web apps with React and Node.js. Based in Buenos Aires, working remotely.",
+        "SuiteScript 2.1 developer with a strong functional understanding of order-to-cash and procure-to-pay, who also ships full stack web apps with React and Node.js. Based in Buenos Aires, working remotely.",
       ctaCv: "Download NetSuite CV",
       ctaContact: "Get in touch",
       experienceTitle: "Experience",
       experienceIntro:
-        "Since February 2024 I have collaborated informally on NetSuite client projects across hotels, accounting firms and other industries, working alongside an experienced NetSuite developer. The work below is what I built myself.",
+        "Since 2023 I have collaborated informally with GolData on NetSuite client projects across hotels, accounting firms and other industries, working alongside an experienced NetSuite developer. Beyond development, I join client meetings to gather requirements, run QA and UAT sessions, and support users live through go-live. The work below is what I built myself.",
       projects: [
         {
           name: "Credit limit validation",
@@ -145,6 +145,10 @@ export const content = {
         "Token-Based Authentication",
         "Git",
         "JavaScript",
+        "Requirements gathering",
+        "QA and UAT",
+        "Live user support",
+        "Troubleshooting",
       ],
       note: "I do not hold NetSuite certifications yet. SuiteFoundation is the next step.",
     },
@@ -270,17 +274,17 @@ export const content = {
     netsuite: {
       teaserTitle: "Desarrollo en NetSuite",
       teaserBody:
-        "Desde febrero de 2024 también trabajo con Oracle NetSuite en proyectos de clientes: SuiteScript 2.1, RESTlets, SuiteQL, SuiteFlow y SDF. Mirá lo que construí.",
+        "Desde 2023 también trabajo con Oracle NetSuite en proyectos de clientes: SuiteScript 2.1, RESTlets, SuiteQL, SuiteFlow y SDF, además de la parte funcional: requerimientos, QA y UAT, y soporte a usuarios. Mirá lo que construí.",
       teaserCta: "Página de NetSuite",
       back: "← Volver al portfolio",
-      role: "NetSuite Developer Junior",
+      role: "NetSuite Developer y Consultor Funcional",
       tagline:
-        "Desarrollador SuiteScript 2.1 que también publica aplicaciones web full stack con React y Node.js. Desde Buenos Aires, trabajando en remoto.",
+        "Desarrollador SuiteScript 2.1 con un sólido entendimiento funcional de order-to-cash y procure-to-pay, que también publica aplicaciones web full stack con React y Node.js. Desde Buenos Aires, trabajando en remoto.",
       ctaCv: "Descargar CV de NetSuite",
       ctaContact: "Contactame",
       experienceTitle: "Experiencia",
       experienceIntro:
-        "Desde febrero de 2024 colaboro de manera informal en proyectos de NetSuite para clientes de hotelería, estudios contables y otros rubros, junto a un desarrollador NetSuite con experiencia. Lo que sigue es lo que construí yo.",
+        "Desde 2023 colaboro de manera informal con GolData en proyectos de NetSuite para clientes de hotelería, estudios contables y otros rubros, junto a un desarrollador NetSuite con experiencia. Además de desarrollar, participo en reuniones con clientes para relevar requerimientos, ejecuto sesiones de QA y UAT, y doy soporte en vivo a los usuarios durante el go-live. Lo que sigue es lo que construí yo.",
       projects: [
         {
           name: "Validación de límite de crédito",
@@ -325,6 +329,10 @@ export const content = {
         "Token-Based Authentication",
         "Git",
         "JavaScript",
+        "Relevamiento de requerimientos",
+        "QA y UAT",
+        "Soporte en vivo a usuarios",
+        "Resolución de problemas",
       ],
       note: "Todavía no tengo certificaciones de NetSuite. SuiteFoundation es el próximo paso.",
     },
