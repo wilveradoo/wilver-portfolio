@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { motion, MotionConfig, useScroll, useSpring } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { content, links, stack } from "@/content/content";
+import { content, links, stack, whatsappLink } from "@/content/content";
 import ContactForm from "@/components/ContactForm";
 import EmailLink from "@/components/EmailLink";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { fadeUp, rise } from "@/components/Reveal";
 
 // Put your photo in /public/wilver.jpg and change this to "/wilver.jpg".
@@ -170,6 +171,7 @@ export default function Portfolio() {
               >
                 Email
               </EmailLink>
+              <a href={whatsappLink(t.contact.whatsappText)} target="_blank" rel="noreferrer" className="hover:text-emerald-600">WhatsApp</a>
             </motion.div>
           </div>
 
@@ -345,7 +347,8 @@ export default function Portfolio() {
         {/* ---------- Contact ---------- */}
         <section id="contact" className="scroll-mt-20 border-t-2 border-zinc-400 py-20">
           <SectionTitle index={6}>{t.contact.title}</SectionTitle>
-          <p className="mb-8 max-w-2xl leading-relaxed">{t.contact.body}</p>
+          <p className="mb-6 max-w-2xl leading-relaxed">{t.contact.body}</p>
+          <WhatsAppButton href={whatsappLink(t.contact.whatsappText)} label={t.contact.whatsapp} className="mb-10" />
           <div className="max-w-2xl">
             <ContactForm t={t.contact} />
           </div>

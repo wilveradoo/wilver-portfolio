@@ -5,9 +5,13 @@ export const links = {
   email: "wilveradoo@gmail.com",
   linkedin: "https://www.linkedin.com/in/wilverguzman/",
   github: "https://github.com/wilveradoo",
+  whatsappNumber: "5491173669434",
   cv: { en: "/cv-wilver-guzman.pdf", es: "/cv-wilver-guzman-es.pdf" },
   cvNetsuite: { en: "/cv-wilver-guzman-netsuite.pdf", es: "/cv-wilver-guzman-netsuite-es.pdf" },
 };
+
+export const whatsappLink = (text) =>
+  `https://wa.me/${links.whatsappNumber}?text=${encodeURIComponent(text)}`;
 
 // Tech stack shown as badges (same in both languages)
 export const stack = {
@@ -194,6 +198,8 @@ export const content = {
       name: "Name",
       email: "Email",
       message: "Message",
+      whatsapp: "Chat on WhatsApp",
+      whatsappText: "Hi Wilver, I found your portfolio and I would like to talk.",
       send: "Send message",
       sending: "Sending...",
       success: "Thanks! Your message was sent.",
@@ -378,6 +384,8 @@ export const content = {
       name: "Nombre",
       email: "Email",
       message: "Mensaje",
+      whatsapp: "Escribime por WhatsApp",
+      whatsappText: "Hola Wilver, vi tu portfolio y me gustaría hablar.",
       send: "Enviar mensaje",
       sending: "Enviando...",
       success: "¡Gracias! Tu mensaje fue enviado.",

@@ -3,7 +3,8 @@
 import EmailLink from "@/components/EmailLink";
 import { useState } from "react";
 import Link from "next/link";
-import { content, links } from "@/content/content";
+import { content, links, whatsappLink } from "@/content/content";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 function Tag({ children }) {
   return (
@@ -84,6 +85,7 @@ export default function NetSuitePage() {
             <EmailLink email={links.email} className="hover:text-emerald-600" copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}>
               Email
             </EmailLink>
+            <a href={whatsappLink(contact.whatsappText)} target="_blank" rel="noreferrer" className="hover:text-emerald-600">WhatsApp</a>
           </div>
         </section>
 
@@ -121,9 +123,12 @@ export default function NetSuitePage() {
         <section className="border-t-2 border-zinc-400 py-16">
           <h2 className="mb-4 text-3xl font-bold text-zinc-900">{contact.title}</h2>
           <p className="mb-6 max-w-2xl leading-relaxed">{contact.body}</p>
-          <EmailLink email={links.email} className="font-mono text-emerald-600 hover:underline" copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}>
+          <WhatsAppButton href={whatsappLink(contact.whatsappText)} label={contact.whatsapp} className="mb-4" />
+          <div>
+            <EmailLink email={links.email} className="font-mono text-emerald-600 hover:underline" copiedLabel={lang === "en" ? "Email copied ✓" : "Email copiado ✓"}>
             {links.email}
-          </EmailLink>
+            </EmailLink>
+          </div>
         </section>
       </main>
 
